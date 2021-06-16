@@ -28,7 +28,7 @@ Route::prefix('admin')
     ->group(function() {
         // Rotta home Admin
         Route::get('/', 'HomeController@index')->name('home');
-        
-        // Rotte resource posts
 
+        // Rotte resource posts
+        Route::resource('/posts', 'PostController');
     });
