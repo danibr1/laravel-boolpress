@@ -150,6 +150,6 @@ class PostController extends Controller
         // $post = Post::find($id);
         $post->delete();
 
-        return redirect()->route('admin.post.index')->with('deleted', $post->title);
+        return redirect()->route('admin.posts.index')->with('deleted', $post->title);
     }
 }

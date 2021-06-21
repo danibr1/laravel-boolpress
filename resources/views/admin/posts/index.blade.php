@@ -41,7 +41,7 @@
                                 @csrf
                                 @method('DELETE')
 
-                                <input class="btn btn-danger" type="text" value="DELETE">
+                                <input class="btn btn-danger" type="submit" value="DELETE">
                             </form>
                         </td>
                     </tr>
