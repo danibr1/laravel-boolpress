@@ -47,8 +47,7 @@
                             class="form-control @error('content') is-invalid @enderror" {{-- se errore applica la classe bootstrap "is-invalid" --}}
                             name="content"
                             id="content"
-                            row="6">
-                            {{ $post->content }}
+                            row="6">{{ $post->content }}
                         </textarea>
                         {{-- Print text errore --}}
                         @error('content')
