@@ -56,6 +56,7 @@
                     </div>
 
                     <button type="submit" class="btn btn-primary">Edit post</button>
+                    <a href="{{ route('admin.posts.index')}}">Return to home</a>
                 </form>
             </div>
         </div>

@@ -56,15 +56,27 @@
                     {{-- CATEGORIES --}}
                     <div class="mb-3">
                         <label for="category_id">Category</label>
-                        <select class="form-control" name="category_id" id="category_id">
-                            <option value="">-- Select Category --</option>
+                        <select class="form-control @error('category_id') is-invalid @enderror"
+                        name="category_id" id="category_id">
+
+                        <option value="">-- Select Category --</option>
                             @foreach ($categories as $category)
-                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                <option value="{{ $category->id }}"
+                                    @if ( $category->id == old('category_id')) selected @endif
+                                    >
+                                    {{ $category->name }}
+                                </option>
                             @endforeach
+
+
                         </select>
+                        @error('category_id')
+                            <div style="color:red">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <button type="submit" class="btn btn-primary">Create post</button>
+                    <a href="{{ route('admin.posts.index')}}">Return to home</a>
                 </form>
             </div>
         </div>

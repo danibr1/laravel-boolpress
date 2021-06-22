@@ -47,6 +47,7 @@ class PostController extends Controller
         $request->validate([
             'title' => 'required|unique:posts|max:255',
             'content' => 'required',
+            'category_id' => 'nullable|exists:categories,id',
         ], [
             'required' => 'The :attribute is required!',
             'unique' => 'The :attribute is already in use for another post',
